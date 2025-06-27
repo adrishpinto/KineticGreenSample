@@ -6,7 +6,7 @@ import RevealScroll from "../components/ProductPage/RevealScroll";
 import Transition from "../components/ProductPage/Transition";
 import ProductShow from "../components/ProductPage/ProductShow";
 import BikeInfo from "../components/ProductPage/BikeInfo";
-import Footer from "../components/Common/Footer";
+import Footer from "../components/common/Footer";
 
 const ProductPage = () => {
   return (
