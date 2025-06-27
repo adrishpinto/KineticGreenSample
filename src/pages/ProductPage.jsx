@@ -6,6 +6,7 @@ import RevealScroll from "../components/ProductPage/RevealScroll";
 import Transition from "../components/ProductPage/Transition";
 import ProductShow from "../components/ProductPage/ProductShow";
 import BikeInfo from "../components/ProductPage/BikeInfo";
+import Footer from "../components/Common/Footer";
 
 const ProductPage = () => {
   return (
@@ -16,6 +17,7 @@ const ProductPage = () => {
       <Transition />
       <RevealScroll />
       <ProductShow />
+      <Footer />
     </div>
   );
 };
