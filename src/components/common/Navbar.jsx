@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/logo.svg";
-import zing from "../../assets/zing.svg";
+
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -47,9 +47,10 @@ const Navbar = () => {
                   onMouseEnter={showDropdown}
                   onMouseLeave={hideDropdown}
                 >
-                  <div 
-                  onClick={() => navigate("/product-info-zing-model")}
-                  className="mx-auto flex flex-col items-center text-center max-w-[600px] w-full bg-white/30 backdrop-blur-md rounded-xl p-4">
+                  <div
+                    onClick={() => navigate("/product-info-zing-model")}
+                    className="mx-auto flex flex-col items-center text-center max-w-[600px] w-full bg-white/30 backdrop-blur-md rounded-xl p-4"
+                  >
                     <h3 className="font-bold text-base mb-2">
                       Electric Scooters
                     </h3>
@@ -57,7 +58,7 @@ const Navbar = () => {
                     <p className="text-gray-500 mb-3">
                       Ex-Showroom @₹ 67,990 *
                     </p>
-                    <img src={zing} alt="Zing" className="w-28 h-auto" />
+                    <img src="/zing.svg" alt="Zing" className="w-28 h-auto" />
                   </div>
                 </motion.div>
               )}

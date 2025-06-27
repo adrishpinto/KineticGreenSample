@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import Zing from "../../assets/product-banner.png";
 
 const ZingBanner = () => {
   const textRef = useRef(null);
@@ -24,7 +23,7 @@ const ZingBanner = () => {
       {/* Parallax Section */}
       <div
         className="h-[100vh] bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: `url(${Zing})` }}
+        style={{ backgroundImage: `url('/product-banner.png')` }}
       >
         <div className="h-[100vh] pt-[60vh] z-30 relative" ref={triggerRef}>
           <motion.div className="text-5xl font-semibold text-center  transition-colors duration-300 text-white">
