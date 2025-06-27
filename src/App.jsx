@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import ScrollToTop from "./ScrollToTop.jsx";
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -28,6 +29,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Product-info-zing-model" element={<ProductPage />} />
