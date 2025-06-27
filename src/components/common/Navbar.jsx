@@ -2,11 +2,12 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/logo.svg";
 import zing from "../../assets/zing.svg";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const timeout = useRef();
-
+  const navigate = useNavigate();
   const showDropdown = () => {
     if (timeout.current) clearTimeout(timeout.current);
     setIsHovered(true);
@@ -20,9 +21,14 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50">
       <div className="flex items-center justify-between px-4 h-16 bg-black/60 backdrop-blur-xs backdrop-brightness-100 text-white shadow-lg">
-        <img src={logo} alt="Logo" className="h-12" />
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-20 lg:w-32 cursor-pointer"
+          onClick={() => navigate("/")}
+        />
 
-        <div className="flex gap-8 text-[15px] font-[300] ml-10 uppercase relative">
+        <div className="flex gap-4 lg:gap-8 text-[10px] md:text-white  lg:text-[15px] font-[300] ml-10 uppercase relative">
           <div
             className="relative px-2 flex items-center justify-center cursor-pointer nav"
             onMouseEnter={showDropdown}
@@ -41,7 +47,9 @@ const Navbar = () => {
                   onMouseEnter={showDropdown}
                   onMouseLeave={hideDropdown}
                 >
-                  <div className="mx-auto flex flex-col items-center text-center max-w-[600px] w-full bg-white/30 backdrop-blur-md rounded-xl p-4">
+                  <div 
+                  onClick={() => navigate("/product-info-zing-model")}
+                  className="mx-auto flex flex-col items-center text-center max-w-[600px] w-full bg-white/30 backdrop-blur-md rounded-xl p-4">
                     <h3 className="font-bold text-base mb-2">
                       Electric Scooters
                     </h3>
@@ -65,10 +73,10 @@ const Navbar = () => {
 
         {/* Buttons */}
         <div className="flex mr-10 tracking-tight font-semibold">
-          <div className="border-2 px-6 py-1 rounded-3xl border-white text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500">
+          <div className="lg:text-base text-xs border-2 px-1 lg:px-6 py-1 rounded-3xl border-white text-black bg-white cursor-pointer hover:bg-black hover:text-white transition-all duration-500">
             Sign Up
           </div>
-          <div className="border-2 px-5 py-1 rounded-3xl cursor-pointer ml-5 text-white border-white hover:bg-white hover:text-black transition-all duration-500">
+          <div className="lg:text-base text-xs border-2 px-1 lg:px-5 py-1 rounded-3xl cursor-pointer ml-5 text-white border-white hover:bg-white hover:text-black transition-all duration-500">
             Login
           </div>
         </div>

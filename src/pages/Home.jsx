@@ -21,7 +21,7 @@ const Home = () => {
       <ScrollImg />
       <Gallery />
       <ReviewV2 />
-      <Reviews />
+     
       <StayConnected />
       <Savings />
       <Footer />

@@ -13,7 +13,6 @@ const ProductPage = () => {
       <Navbar />
       <Banner />
       <BikeInfo />
-      <StackingCards />
       <Transition />
       <RevealScroll />
       <ProductShow />

@@ -56,7 +56,7 @@ const cardVariants = {
 
 const Gallery = () => {
   return (
-    <div className="p-6  mx-auto bg-white dark:bg-black">
+    <div className="p-6  mx-auto bg-white ">
       <div className="mx-auto w-[80%] mb-8">
         <h2 className="text-5xl font-bold mb-3">Sleek, Sharp</h2>
         <h2 className="text-5xl font">and packed with features</h2>
@@ -68,7 +68,7 @@ const Gallery = () => {
             className="relative group overflow-hidden rounded-2xl shadow-xl"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             custom={index}
             variants={cardVariants}
           >

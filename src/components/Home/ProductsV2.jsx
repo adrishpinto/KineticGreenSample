@@ -7,12 +7,13 @@ import { IoIosBatteryFull } from "react-icons/io";
 import { GiElectric } from "react-icons/gi";
 import { TbRoad } from "react-icons/tb";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ bike_name }) => {
   const redBikeRef = useRef(null);
   const whiteBikeRef = useRef(null);
   const scrollContainerRef = useRef(null);
-
+  const navigate = useNavigate();
   const scrollTo = (ref) => {
     const element = ref.current;
     if (element) {
@@ -25,7 +26,7 @@ const Card = ({ bike_name }) => {
   };
 
   return (
-    <div className="sm:w-[45%] w-full min-w-[400px] flex flex-col relative border border-slate-200 rounded-sm">
+    <div className="sm:w-[45%] w-full min-w-[400px] flex flex-col  relative border border-slate-200 rounded-sm">
       <div className="relative w-full h-[300px] rounded-t-sm overflow-hidden">
         {/* Background */}
         <img
@@ -63,7 +64,7 @@ const Card = ({ bike_name }) => {
       {/* Product Info */}
 
       <div className="px-6 py-4 border-t border-slate-200 bg-white">
-        <div className="flex gap-2">
+        <div className="flex gap-2 ">
           <div
             className="bg-red-500 h-4 w-4 rounded-full ring ring-black"
             onClick={() => scrollTo(redBikeRef)}
@@ -85,24 +86,27 @@ const Card = ({ bike_name }) => {
 
         {/* Specs */}
         <div className="flex justify-between text-center text-[12px] text-gray-700 w-[80%]  mx-auto">
-          <div className="flex flex-col items-center">
-            <TbRoad className="text-2xl text-black hover:text-slate-600" />
-            <p className="font-bold">Range</p>
+          <div className="flex flex-col items-center group  p-2 rounded-xl transition">
+            <TbRoad className="text-2xl text-black group-hover:text-cyan-700 transition-colors" />
+            <p className="font-bold group-hover:text-cyan-700">Range</p>
             <p className="text-gray-500">100 Kms*</p>
           </div>
-          <div className="flex flex-col items-center">
-            <MdSpeed className="text-2xl text-black hover:text-red-600" />
-            <p className="font-bold">Top Speed</p>
+
+          <div className="flex flex-col items-center group  p-2 rounded-xl transition">
+            <MdSpeed className="text-2xl text-black group-hover:text-red-600 transition-colors" />
+            <p className="font-bold group-hover:text-red-600">Top Speed</p>
             <p className="text-gray-500">25 km/hr*</p>
           </div>
-          <div className="flex flex-col items-center">
-            <IoIosBatteryFull className="text-2xl text-black hover:text-lime-600" />
-            <p className="font-bold">Battery</p>
+
+          <div className="flex flex-col items-center group  p-2 rounded-xl transition">
+            <IoIosBatteryFull className="text-2xl text-black group-hover:text-lime-600 transition-colors" />
+            <p className="font-bold group-hover:text-lime-600">Battery</p>
             <p className="text-gray-500">1.7 kWh</p>
           </div>
-          <div className="flex flex-col items-center">
-            <GiElectric className="text-2xl text-black hover:text-yellow-500" />
-            <p className="font-bold">Charging</p>
+
+          <div className="flex flex-col items-center group  p-2 rounded-xl transition">
+            <GiElectric className="text-2xl text-black group-hover:text-yellow-500 transition-colors" />
+            <p className="font-bold group-hover:text-yellow-500">Charging</p>
             <p className="text-gray-500">3 hours*</p>
           </div>
         </div>
@@ -110,7 +114,10 @@ const Card = ({ bike_name }) => {
           <div className="px-4 py-1 border-black border rounded-lg text-white bg-black w-fit hover:scale-105 transition-all duration-300 cursor-pointer">
             Book Now
           </div>
-          <div className="px-4 py-1  rounded-lg  bg-white border-black border hover:scale-105 transition-all duration-300  w-fit cursor-pointer">
+          <div
+            className="px-4 py-1  rounded-lg  bg-white border-black border hover:scale-105 transition-all duration-300  w-fit cursor-pointer"
+            onClick={() => navigate("/product-info-zing-model")}
+          >
             Explore more
           </div>
         </div>
@@ -123,7 +130,6 @@ const ProductsV2 = () => {
   return (
     <div className="">
       <div className="w-[90%] mt-20 mb-4 mx-auto ">
-        
         <h1 className="text-5xl">
           Designed in India,{" "}
           <span className="font-bold text-lime-600">
@@ -131,7 +137,7 @@ const ProductsV2 = () => {
           </span>
         </h1>
       </div>
-      <div className="flex gap-4 gap-20 sm:gap-10 w-full flex-col sm:flex-row items-center justify-center">
+      <div className="flex gap-4 gap-20 sm:gap-10 w-full flex-col lg:flex-row items-center justify-center">
         <Card bike_name="Zing" />
         <Card bike_name="Zulu" />
       </div>

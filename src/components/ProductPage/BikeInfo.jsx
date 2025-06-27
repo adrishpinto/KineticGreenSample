@@ -22,7 +22,7 @@ const BikeInfo = () => {
   const yImage = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
 
   return (
-    <div className="min-h-screen mt-84" ref={containerRef}>
+    <div className=" mt-84" ref={containerRef}>
       <div className="relative mx-auto shadow-2xl">
         {/* ✅ Parallax Image */}
         <motion.img
